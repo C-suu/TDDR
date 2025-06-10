@@ -4,9 +4,7 @@ Torch implementation of the TDDR algorithm.
 Code for comparison algorithms:
 
 Actor-critic:
-
-Code for DDPG and TD3: https://github.com/sfujim/TD3.git
-
+DDPG and TD3: https://github.com/sfujim/TD3.git
 SAC: https://github.com/quantumiracle/Popular-RL-Algorithms.git or https://github.com/vwxyzjn/cleanrl.git
 
 PPO: https://github.com/vwxyzjn/cleanrl.git
