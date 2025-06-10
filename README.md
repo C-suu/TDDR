@@ -13,7 +13,7 @@ If you find our work helpful, please consider cite our work.
 }
 
 
-Code for comparison algorithms:
+# Code for comparison algorithms:
 
 Actor-critic:
 
