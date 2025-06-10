@@ -1,10 +1,23 @@
 # Double Actor-Critic with TD Error-Driven Regularization in Reinforcement Learning
 Torch implementation of the TDDR algorithm.
 
+# Citation
+If you find our work helpful, please consider cite our work.
+
+@article{chen2024double,
+  title={Double Actor-Critic with TD Error-Driven Regularization in Reinforcement Learning},
+  author={Chen, Haohui and Chen, Zhiyong and Liu, Aoxiang and Fang, Wentuo},
+  journal={arXiv preprint arXiv:2409.19231},
+  year={2024}
+}
+
+
 Code for comparison algorithms:
 
 Actor-critic:
+
 DDPG and TD3: https://github.com/sfujim/TD3.git
+
 SAC: https://github.com/quantumiracle/Popular-RL-Algorithms.git or https://github.com/vwxyzjn/cleanrl.git
 
 PPO: https://github.com/vwxyzjn/cleanrl.git
