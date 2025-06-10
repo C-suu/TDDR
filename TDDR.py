@@ -157,17 +157,9 @@ class TDDR(object):
 			Delta_1 = reward + not_done * self.discount * next_Q1 - current_Q
 			Delta_2 = reward + not_done * self.discount * next_Q2 - current_Q  
 
-			## Here is TDDR.Q1.A1.Q2.A2
-			next_Q3 = self.q_weight * next_Q1 + (1 - self.q_weight) * next_Q2
-			next_Q4 = self.q_weight * next_Q2 + (1 - self.q_weight) * next_Q1
-   
-   			# ## Here is TDDR.A1.A2
-			# next_Q3 = self.q_weight * next_Q1 + (1-self.q_weight) * next_Q1_a2 
-			# next_Q4 = self.q_weight * next_Q2 + (1-self.q_weight) * next_Q1_a1
-   
-   			# ## Here is TDDR.Q1.Q2
-			# next_Q3 = self.q_weight * next_Q1 + (1-self.q_weight) * next_Q1_a1 
-			# next_Q4 = self.q_weight * next_Q2 + (1-self.q_weight) * next_Q1_a2
+			next_Q3 = next_Q1
+			next_Q4 = next_Q2
+
 
 			comparison_tensor = torch.abs(Delta_1) <= torch.abs(Delta_2)
 
