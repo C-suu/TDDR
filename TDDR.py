@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-# Here is the code for the three convex combination versions.
+# Here is the code for TDDR.
 
 class Actor(nn.Module):
 	def __init__(self, state_dim, action_dim, max_action, hidden_sizes=[400, 300]):
@@ -71,7 +71,6 @@ class TDDR(object):
 		actor_lr=1e-3,
 		critic_lr=1e-3,
 		hidden_sizes=[400, 300],
-		q_weight=0.9,
 	):
 		self.device = device
 		self.total_it = 0
