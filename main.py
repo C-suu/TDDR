@@ -5,9 +5,6 @@ import argparse
 import os
 
 import utils
-import TD3
-import OurDDPG
-import DDPG
 import TDDR
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -36,8 +33,8 @@ def eval_policy(policy, env_name, seed, eval_episodes=10):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--policy", default="TDDR")                 # optional policy (TDDR, TD3, DDPG or OurDDPG)
-    parser.add_argument("--env", default="Hopper-v2")               # OpenAI gym environment name
+    parser.add_argument("--policy", default="DDPG")                 # optional policy (TDDR)
+    parser.add_argument("--env", default="")               # OpenAI gym environment name
     parser.add_argument("--seed", default=0, type=int)              # Sets Gym, PyTorch and Numpy seeds
     parser.add_argument("--start_timesteps", default=1e4, type=int) # Time steps initial random policy is used 1e4
     parser.add_argument("--eval_freq", default=5e3, type=int)       # How often (time steps) we evaluate 5e3
@@ -52,8 +49,7 @@ if __name__ == "__main__":
     parser.add_argument("--save_model", default=False)              # Save model and optimizer parameters
     parser.add_argument("--load_model", default="")                 # Model load file name, "" doesn't load, "default" uses file_name
     parser.add_argument("--actor_lr", default=1e-3)                 
-    parser.add_argument("--critic_lr", default=1e-3)  
-    parser.add_argument("--qweight", default=0.3, type=float, help='The weighting coefficient that correlates value estimation from double actors')            
+    parser.add_argument("--critic_lr", default=1e-3)         
 	
     args = parser.parse_args()
 
@@ -91,18 +87,11 @@ if __name__ == "__main__":
     }
 
     # Initialize policy
-    if args.policy == "TD3":
+    if args.policy == "TDDR":
         # Target policy smoothing is scaled wrt the action scale
         kwargs["policy_noise"] = args.policy_noise * max_action
         kwargs["noise_clip"] = args.noise_clip * max_action
         kwargs["policy_freq"] = args.policy_freq
-        policy = TD3.TD3(**kwargs)
-    elif args.policy == "OurDDPG":
-        policy = OurDDPG.DDPG(**kwargs)
-    elif args.policy == "DDPG":
-        policy = DDPG.DDPG(**kwargs)
-    elif args.policy == "TDDR":
-        kwargs["q_weight"] = args.qweight
         policy = TDDR.TDDR(**kwargs)
 
     if args.load_model != "":
