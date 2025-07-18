@@ -96,7 +96,6 @@ class TDDR(object):
 		self.tau = tau
 		self.policy_noise = policy_noise
 		self.noise_clip = noise_clip
-		self.q_weight = q_weight
 
 	def select_action(self, state):
 		state = torch.FloatTensor(state.reshape(1, -1)).to(self.device)
