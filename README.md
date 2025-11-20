@@ -5,11 +5,12 @@ Torch implementation of the TDDR algorithm.
 If you find our work helpful, please consider cite our work.
 
 ```bibtex
-@article{chen2024TDDR,
-  title={Double Actor-Critic with TD Error-Driven Regularization in Reinforcement Learning},
-  author={Chen, Haohui and Chen, Zhiyong and Liu, Aoxiang and Fang, Wentuo},
-  journal={arXiv preprint arXiv:2409.19231},
-  year={2024}
+@article{chen2025doubleactorcritic,
+  author  = {Haohui Chen and Zhiyong Chen and Aoxiang Liu and Wentuo Fang},
+  title   = {Double Actor-Critic with TD Error-Driven Regularization in Reinforcement Learning},
+  journal = {Neural Networks},
+  year    = {2025},
+  doi     = {10.1016/j.neunet.2025.108323}
 }
 ```
 
