@@ -10,7 +10,7 @@ If you find our work helpful, please consider cite our work.
   title   = {Double Actor-Critic with TD Error-Driven Regularization in Reinforcement Learning},
   journal = {Neural Networks},
   year    = {2025},
-  doi     = {10.1016/j.neunet.2025.108323}
+  doi     = {https://doi.org/10.1016/j.neunet.2025.108323}
 }
 ```
 
