@@ -1,3 +1,5 @@
+# 这是TDDR论文的图2的子图b，是HalfCheetah运行五次的画图程序。其他环境和其他算法同理，只需要运行不同算法和不同环境，即可画出TDDR的图2，3，4。
+
 import numpy as np
 import matplotlib.pyplot as plt
 import os
@@ -72,4 +74,5 @@ for environment in environments:
     plt.title(f'{environment}', fontsize='xx-large')
 
 plt.tight_layout()
+
 plt.show()
