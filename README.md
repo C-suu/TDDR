@@ -14,7 +14,7 @@ If you find our work helpful, please consider cite our work.
 }
 ```
 
-# HalfCheetah里面有TDDR运行5次保存的npy文件，“plot.py”是画图文件。运行结果：
+## We evaluated TDDR in HalfCheetah across five random seeds. The evaluation metrics were logged as `.npy` files, and the corresponding learning curves were generated using the `plot.py` script. The empirical results are presented below:
 <img width="2000" height="1200" alt="b0442bf7c3d8533eb19ebaedff808c26" src="https://github.com/user-attachments/assets/cab32c89-460d-4bde-aed2-864140a60072" />
 
 
